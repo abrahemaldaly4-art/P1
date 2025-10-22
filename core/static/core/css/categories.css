@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/* استيراد التنسيقات المشتركة */
+@import url('base.css');
+
+/* تنسيقات خاصة بصفحة "التصنيفات" فقط */
+
+.categories-hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #4a6cf7 0%, #6a11cb 100%);
+    color: white;
+    text-align: center;
+}
+
+.categories-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.categories-hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.categories-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.category-icon {
+    font-size: 50px;
+    color: #4a6cf7;
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.category-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.article-count {
+    display: block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.category-card .btn {
+    margin-top: 10px;
+}
+
+/* تصميم متجاوب خاص بصفحة categories */
+@media (max-width: 768px) {
+    .categories-hero h1 {
+        font-size: 36px;
+    }
+    
+    .categories-hero p {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,164 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التصنيفات - مقال</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ربط ملفات CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/categories.css' %}">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}">مقال</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}">الرئيسية</a></li>
+                    <li><a href="{% url 'articles' %}">المقالات</a></li>
+                    <li><a href="{% url 'categories' %}" class="active">التصنيفات</a></li>
+                    <li><a href="{% url 'about' %}">من نحن</a></li>
+                    <li><a href="{% url 'contact' %}">اتصل بنا</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="{% url 'login' %}" class="btn btn-outline">تسجيل الدخول</a>
+                    <a href="{% url 'register' %}" class="btn btn-primary">إنشاء حساب</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم البطل -->
+    <section class="categories-hero">
+        <div class="container">
+            <h1>تصنيفات المقالات</h1>
+            <p>استكشف مقالاتنا المنظمة حسب المواضيع والاهتمامات</p>
+        </div>
+    </section>
+
+    <!-- قسم التصنيفات -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="categories-grid">
+                <!-- تصنيف التقنية -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>التقنية</h3>
+                    <p>أحدث مقالات البرمجة، التطبيقات، والذكاء الاصطناعي</p>
+                    <span class="article-count">245 مقال</span>
+                    <a href="#" class="btn btn-outline">استكشاف</a>
+                </div>
+
+                <!-- تصنيف التطوير الذاتي -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>التطوير الذاتي</h3>
+                    <p>نصائح لتطوير المهارات الشخصية والمهنية</p>
+                    <span class="article-count">180 مقال</span>
+                    <a href="#" class="btn btn-outline">استكشاف</a>
+                </div>
+
+                <!-- تصنيف الأعمال -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>الأعمال</h3>
+                    <p>إدارة المشاريع، التسويق، واستراتيجيات النجاح</p>
+                    <span class="article-count">156 مقال</span>
+                    <a href="#" class="btn btn-outline">استكشاف</a>
+                </div>
+
+                <!-- تصنيف الثقافة -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>الثقافة</h3>
+                    <p>مقالات أدبية، فنية، وثقافية متنوعة</p>
+                    <span class="article-count">89 مقال</span>
+                    <a href="#" class="btn btn-outline">استكشاف</a>
+                </div>
+
+                <!-- تصنيف الصحة -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>الصحة</h3>
+                    <p>نصائح صحية، رياضية، وعلم النفس</p>
+                    <span class="article-count">120 مقال</span>
+                    <a href="#" class="btn btn-outline">استكشاف</a>
+                </div>
+
+                <!-- تصنيف السفر -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>السفر</h3>
+                    <p>تجارب سفر، نصائح، ووجهات سياحية</p>
+                    <span class="article-count">75 مقال</span>
+                    <a href="#" class="btn btn-outline">استكشاف</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>مقال</h3>
+                    <p>منصة عربية لنشر المعرفة وتبادل الخبرات من خلال المقالات المتميزة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'home' %}">الرئيسية</a></li>
+                        <li><a href="{% url 'articles' %}">المقالات</a></li>
+                        <li><a href="{% url 'categories' %}">التصنيفات</a></li>
+                        <li><a href="{% url 'about' %}">من نحن</a></li>
+                        <li><a href="{% url 'contact' %}">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>المساعدة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">دعم الكتاب</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 مقال. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="{% static 'core/js/categories.js' %}"></script>
+</body>
+</html>
