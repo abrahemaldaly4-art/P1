@@ -1,0 +1,207 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - مقال</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ربط ملفات CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/about.css' %}">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}">مقال</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}">الرئيسية</a></li>
+                    <li><a href="{% url 'articles' %}">المقالات</a></li>
+                    <li><a href="{% url 'categories' %}">التصنيفات</a></li>
+                    <li><a href="{% url 'about' %}" class="active">من نحن</a></li>
+                    <li><a href="{% url 'contact' %}">اتصل بنا</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="{% url 'login' %}" class="btn btn-outline">تسجيل الدخول</a>
+                    <a href="{% url 'register' %}" class="btn btn-primary">إنشاء حساب</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم البطل لصفحة من نحن -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>من نحن</h1>
+                <p>نحن منصة عربية مخصصة لنشر المعرفة وتبادل الخبرات من خلال المقالات المتميزة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم قصة التأسيس -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2>قصتنا</h2>
+                    <p>بدأت رحلتنا من الإيمان بقوة الكلمة وأثرها في بناء المجتمعات. نسعى لخلق مساحة إبداعية للكتاب والقراء على حد سواء.</p>
+                    <div class="story-stats">
+                        <div class="stat">
+                            <h3>+500</h3>
+                            <p>كاتب محتوى</p>
+                        </div>
+                        <div class="stat">
+                            <h3>+10,000</h3>
+                            <p>مقال منشور</p>
+                        </div>
+                        <div class="stat">
+                            <h3>+1M</h3>
+                            <p>قارئ شهري</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم رسالتنا ورؤيتنا -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>رسالتنا</h3>
+                    <p>تمكين الأصوات العربية وإثراء المحتوى الرقمي بمقالات ذات قيمة وجودة عالية، نساهم من خلالها في نشر المعرفة والثقافة.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>رؤيتنا</h3>
+                    <p>أن نكون المنصة العربية الرائدة في مجال المحتوى المكتوب، وأن نكون المرجع الأول للقارئ العربي الباحث عن المعرفة الموثوقة.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>قيمنا</h3>
+                    <p>نؤمن بالجودة، المصداقية، التنوع، والإبداع. هذه القيم هي الأساس الذي نبني عليه كل محتوى نقدمه لجمهورنا.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم فريق العمل -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>فريقنا</h2>
+                <p>مجموعة من المحترفين المتخصصين في مختلف المجالات</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>فريق التحرير</h3>
+                    <p>متخصصون في مراجعة وتحسين المحتوى لضمان الجودة والدقة</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>فريق التقنية</h3>
+                    <p>مطورون ومصممون يضمنون تجربة مستخدم سلسة ومتميزة</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>فريق التسويق</h3>
+                    <p>خبراء في التسويق الرقمي وتطوير استراتيجيات النمو</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>دعم العملاء</h3>
+                    <p>متاحون دائماً لمساعدتك والإجابة على استفساراتك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الانضمام للفريق -->
+    <section class="join-section">
+        <div class="container">
+            <div class="join-content">
+                <h2>انضم إلى رحلتنا</h2>
+                <p>سواء كنت كاتباً محترفاً أو متحمساً للمعرفة، لديك مكان معنا</p>
+                <div class="join-buttons">
+                    <a href="{% url 'register' %}" class="btn btn-primary">ابدأ الكتابة</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>مقال</h3>
+                    <p>منصة عربية لنشر المعرفة وتبادل الخبرات من خلال المقالات المتميزة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'home' %}">الرئيسية</a></li>
+                        <li><a href="{% url 'articles' %}">المقالات</a></li>
+                        <li><a href="{% url 'categories' %}">التصنيفات</a></li>
+                        <li><a href="{% url 'about' %}">من نحن</a></li>
+                        <li><a href="{% url 'contact' %}">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>المساعدة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">دعم الكتاب</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 مقال. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="{% static 'core/js/about.js' %}"></script>
+</body>
+</html>

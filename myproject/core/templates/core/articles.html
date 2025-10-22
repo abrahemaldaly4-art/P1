@@ -1,0 +1,289 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المقالات - مقال</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ربط ملفات CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/articles.css' %}">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}">مقال</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}">الرئيسية</a></li>
+                    <li><a href="{% url 'articles' %}" class="active">المقالات</a></li>
+                    <li><a href="{% url 'categories' %}">التصنيفات</a></li>
+                    <li><a href="{% url 'about' %}">من نحن</a></li>
+                    <li><a href="{% url 'contact' %}">اتصل بنا</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="{% url 'login' %}" class="btn btn-outline">تسجيل الدخول</a>
+                    <a href="{% url 'register' %}" class="btn btn-primary">إنشاء حساب</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم البطل -->
+    <section class="articles-hero">
+        <div class="container">
+            <h1>المقالات</h1>
+            <p>اكتشف مجموعة متنوعة من المقالات في مختلف المجالات والتخصصات</p>
+        </div>
+    </section>
+
+    <!-- قسم التصفية والبحث -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" placeholder="ابحث في المقالات..." id="searchInput">
+                    <button type="button" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="filter-options">
+                    <select id="categoryFilter">
+                        <option value="">جميع التصنيفات</option>
+                        <option value="technology">التقنية</option>
+                        <option value="self-development">التطوير الذاتي</option>
+                        <option value="business">الأعمال</option>
+                        <option value="culture">الثقافة</option>
+                        <option value="health">الصحة</option>
+                        <option value="travel">السفر</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="newest">الأحدث</option>
+                        <option value="oldest">الأقدم</option>
+                        <option value="popular">الأكثر تفاعلاً</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المقالات -->
+    <section class="articles-section">
+        <div class="container">
+            <div class="articles-grid" id="articlesGrid">
+                <!-- مقال 1 -->
+                <article class="article-card" data-category="technology" data-date="2024-01-15">
+                    <div class="article-image">
+                        <img src="{% static 'core/images/ai-tech.jpg' %}" alt="الذكاء الاصطناعي" onerror="this.style.display='none'">
+                        <div class="article-category">التقنية</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">مستقبل الذكاء الاصطناعي في العالم العربي</h3>
+                        <p class="article-excerpt">استكشاف الفرص والتحديات التي يواجهها الذكاء الاصطناعي في المنطقة العربية وكيف يمكننا الاستفادة منه في دعم الاقتصاد الرقمي...</p>
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <img src="{% static 'core/images/author1.jpg' %}" alt="أحمد محمد" class="author-avatar" onerror="this.style.display='none'">
+                                <span>أحمد محمد</span>
+                            </div>
+                            <div class="article-stats">
+                                <span class="reading-time"><i class="far fa-clock"></i> 5 دقائق</span>
+                                <span class="views-count"><i class="far fa-eye"></i> 1.2K</span>
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <span class="article-date">قبل 3 أيام</span>
+                            <a href="#" class="read-more">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- مقال 2 -->
+                <article class="article-card" data-category="self-development" data-date="2024-01-12">
+                    <div class="article-image">
+                        <img src="{% static 'core/images/productivity.jpg' %}" alt="زيادة الإنتاجية" onerror="this.style.display='none'">
+                        <div class="article-category">التطوير الذاتي</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">10 عادات يومية تزيد من إنتاجيتك بشكل ملحوظ</h3>
+                        <p class="article-excerpt">تعرف على العادات البسيطة التي يمكن أن تغير حياتك المهنية وتزيد من كفاءتك في العمل والحياة اليومية...</p>
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <img src="{% static 'core/images/author2.jpg' %}" alt="فاطمة عبدالله" class="author-avatar" onerror="this.style.display='none'">
+                                <span>فاطمة عبدالله</span>
+                            </div>
+                            <div class="article-stats">
+                                <span class="reading-time"><i class="far fa-clock"></i> 7 دقائق</span>
+                                <span class="views-count"><i class="far fa-eye"></i> 2.4K</span>
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <span class="article-date">قبل أسبوع</span>
+                            <a href="#" class="read-more">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- مقال 3 -->
+                <article class="article-card" data-category="business" data-date="2024-01-10">
+                    <div class="article-image">
+                        <img src="{% static 'core/images/branding.jpg' %}" alt="العلامات التجارية" onerror="this.style.display='none'">
+                        <div class="article-category">الأعمال</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">كيف تبني علامة تجارية ناجحة من الصفر</h3>
+                        <p class="article-excerpt">دليل شامل لبناء علامة تجارية قوية تترك أثراً في السوق وتجذب العملاء المناسبين لتحقيق النجاح المستدام...</p>
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <img src="{% static 'core/images/author3.jpg' %}" alt="خالد السعدي" class="author-avatar" onerror="this.style.display='none'">
+                                <span>خالد السعدي</span>
+                            </div>
+                            <div class="article-stats">
+                                <span class="reading-time"><i class="far fa-clock"></i> 8 دقائق</span>
+                                <span class="views-count"><i class="far fa-eye"></i> 3.1K</span>
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <span class="article-date">قبل 10 أيام</span>
+                            <a href="#" class="read-more">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- مقال 4 -->
+                <article class="article-card" data-category="culture" data-date="2024-01-08">
+                    <div class="article-image">
+                        <img src="{% static 'core/images/arabic-literature.jpg' %}" alt="الأدب العربي" onerror="this.style.display='none'">
+                        <div class="article-category">الثقافة</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">تطور الأدب العربي في العصر الحديث</h3>
+                        <p class="article-excerpt">رحلة عبر مراحل تطور الأدب العربي من الشعر التقليدي إلى الرواية الحديثة وأثر التكنولوجيا على المشهد الأدبي...</p>
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <img src="{% static 'core/images/author4.jpg' %}" alt="سارة القحطاني" class="author-avatar" onerror="this.style.display='none'">
+                                <span>سارة القحطاني</span>
+                            </div>
+                            <div class="article-stats">
+                                <span class="reading-time"><i class="far fa-clock"></i> 6 دقائق</span>
+                                <span class="views-count"><i class="far fa-eye"></i> 1.8K</span>
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <span class="article-date">قبل أسبوعين</span>
+                            <a href="#" class="read-more">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- مقال 5 -->
+                <article class="article-card" data-category="health" data-date="2024-01-05">
+                    <div class="article-image">
+                        <img src="{% static 'core/images/mental-health.jpg' %}" alt="الصحة النفسية" onerror="this.style.display='none'">
+                        <div class="article-category">الصحة</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">الصحة النفسية في بيئة العمل: دليل شامل للتعامل مع الضغوط</h3>
+                        <p class="article-excerpt">استراتيجيات عملية للحفاظ على الصحة النفسية في بيئة العمل وتجنب الإرهاق والضغوط اليومية...</p>
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <img src="{% static 'core/images/author5.jpg' %}" alt="د. محمد العتيبي" class="author-avatar" onerror="this.style.display='none'">
+                                <span>د. محمد العتيبي</span>
+                            </div>
+                            <div class="article-stats">
+                                <span class="reading-time"><i class="far fa-clock"></i> 9 دقائق</span>
+                                <span class="views-count"><i class="far fa-eye"></i> 2.7K</span>
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <span class="article-date">قبل 3 أسابيع</span>
+                            <a href="#" class="read-more">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- مقال 6 -->
+                <article class="article-card" data-category="travel" data-date="2024-01-02">
+                    <div class="article-image">
+                        <img src="{% static 'core/images/travel-tips.jpg' %}" alt="نصائح السفر" onerror="this.style.display='none'">
+                        <div class="article-category">السفر</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">أفضل الوجهات السياحية في الشرق الأوسط لعام 2024</h3>
+                        <p class="article-excerpt">اكتشف أجمل الوجهات السياحية في المنطقة العربية مع نصائح السفر والميزانيات المناسبة لكل وجهة...</p>
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <img src="{% static 'core/images/author6.jpg' %}" alt="نورة الشمري" class="author-avatar" onerror="this.style.display='none'">
+                                <span>نورة الشمري</span>
+                            </div>
+                            <div class="article-stats">
+                                <span class="reading-time"><i class="far fa-clock"></i> 4 دقائق</span>
+                                <span class="views-count"><i class="far fa-eye"></i> 1.5K</span>
+                            </div>
+                        </div>
+                        <div class="article-footer">
+                            <span class="article-date">قبل شهر</span>
+                            <a href="#" class="read-more">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- زر تحميل المزيد -->
+            <div class="load-more-container">
+                <button class="btn btn-outline" id="loadMoreBtn">تحميل المزيد من المقالات</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>مقال</h3>
+                    <p>منصة عربية لنشر المعرفة وتبادل الخبرات من خلال المقالات المتميزة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'home' %}">الرئيسية</a></li>
+                        <li><a href="{% url 'articles' %}">المقالات</a></li>
+                        <li><a href="{% url 'categories' %}">التصنيفات</a></li>
+                        <li><a href="{% url 'about' %}">من نحن</a></li>
+                        <li><a href="{% url 'contact' %}">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>المساعدة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">دعم الكتاب</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 مقال. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="{% static 'core/js/articles.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - مقال</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ربط ملفات CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/contact.css' %}">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}">مقال</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}">الرئيسية</a></li>
+                    <li><a href="{% url 'articles' %}">المقالات</a></li>
+                    <li><a href="{% url 'categories' %}">التصنيفات</a></li>
+                    <li><a href="{% url 'about' %}">من نحن</a></li>
+                    <li><a href="{% url 'contact' %}" class="active">اتصل بنا</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="{% url 'login' %}" class="btn btn-outline">تسجيل الدخول</a>
+                    <a href="{% url 'register' %}" class="btn btn-primary">إنشاء حساب</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم البطل -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>اتصل بنا</h1>
+            <p>نحن هنا للإجابة على استفساراتك ومساعدتك في أي وقت</p>
+        </div>
+    </section>
+
+    <!-- قسم معلومات الاتصال -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>عنواننا</h3>
+                    <p>الرياض، حي العليا<br>المملكة العربية السعودية</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>هاتفنا</h3>
+                    <p>+966 12 345 6789<br>+966 12 345 6790</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>info@maqal.com<br>support@maqal.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>ساعات العمل</h3>
+                    <p>الأحد - الخميس<br>9:00 ص - 5:00 م</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم نموذج الاتصال -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>أرسل لنا رسالة</h2>
+                    <p>سنكون سعداء بالتواصل معك والرد على استفساراتك في أقرب وقت ممكن</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">الموضوع *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">الرسالة *</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>الأسئلة الشائعة</h2>
+                <p>إجابات على أكثر الأسئلة شيوعاً من مستخدمينا</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>كيف يمكنني نشر مقال على المنصة؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك نشر مقال بعد إنشاء حساب والضغط على زر "ابدأ الكتابة". ستجد محرر نصوص متطور يمكنك من تنسيق مقالك وإضافة الصور قبل النشر.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>هل هناك شروط لنشر المقالات؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، يجب أن يكون المحتوى أصلياً وغير منسوخ، وأن يلتزم بمعايير المجتمع وقوانين النشر. يمكنك الاطلاع على شروط الاستخدام الكاملة من خلال الرابط المخصص.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>كيف يمكنني التواصل مع فريق الدعم؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك التواصل مع فريق الدعم عبر هذا النموذج، أو عبر البريد الإلكتروني support@maqal.com، وسنرد عليك خلال 24 ساعة عمل.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>هل المنصة مجانية للاستخدام؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، المنصة مجانية تماماً للقراءة والكتابة. نحن نؤمن بإتاحة المعرفة للجميع دون أي عوائق مادية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>مقال</h3>
+                    <p>منصة عربية لنشر المعرفة وتبادل الخبرات من خلال المقالات المتميزة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'home' %}">الرئيسية</a></li>
+                        <li><a href="{% url 'articles' %}">المقالات</a></li>
+                        <li><a href="{% url 'categories' %}">التصنيفات</a></li>
+                        <li><a href="{% url 'about' %}">من نحن</a></li>
+                        <li><a href="{% url 'contact' %}">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>المساعدة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">دعم الكتاب</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 مقال. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="{% static 'core/js/contact.js' %}"></script>
+</body>
+</html>
